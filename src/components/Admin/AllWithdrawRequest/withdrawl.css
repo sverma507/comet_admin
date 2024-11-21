@@ -1,0 +1,43 @@
+.hit-withdrawl{
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.mannual-withdrawl{
+    background-color: rgb(60, 209, 60);
+    padding: 10px;
+    width: 90px;
+    border-radius: 20px;
+}
+
+.mannual-withdrawl:hover{
+    color: white;
+    background-color: green;
+}
+
+.api-withdrawl{
+    background-color: rgb(236, 227, 67);
+    padding: 10px;
+    width: 90px;
+    border-radius: 20px;
+}
+
+.api-withdrawl:hover{
+    color: white;
+    background-color: rgb(129, 129, 19);
+}
+
+.reject-withdrawl:hover{
+    color: black;
+    background-color: rgb(240, 108, 85);
+}
+
+.reject-withdrawl{
+    background-color: rgb(199, 34, 34);
+    padding: 10px;
+    width: 90px;
+    color: white;
+    border-radius: 20px;
+}

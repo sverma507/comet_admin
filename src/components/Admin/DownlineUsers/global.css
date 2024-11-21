@@ -1,0 +1,20 @@
+/* Add this in your global CSS file if you're using Tailwind's @apply directive */
+
+.spinner {
+    @apply border-4 border-gray-200 border-t-transparent border-solid rounded-full;
+    border-top-color: #3498db; /* Blue color */
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spinner-overlay {
+    @apply absolute inset-0 bg-white bg-opacity-80 flex items-center justify-center;
+  }
+  

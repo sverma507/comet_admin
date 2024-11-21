@@ -1,0 +1,112 @@
+/* General container styles */
+.loginContainerAdmin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('./earning_banner2.png') no-repeat center center/cover;
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay for blurring the background */
+.loginContainerAdmin::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: -1;
+}
+
+/* Form container styles */
+.adminLoginForm {
+  background: rgba(255, 255, 255, 0.2); /* White background with transparency */
+  backdrop-filter: blur(10px); /* Apply blur */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Input fields wrapper */
+.adminloginInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.adminloginInputWrapper input {
+  background: rgba(255, 255, 255, 0.001);
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.adminloginInputWrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.phoneIcon, .countryCode {
+  color: #fff;
+}
+
+/* Button styles */
+/* button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+} */
+
+
+/* Logo styles */
+.loginContainerAdmin a img {
+  display: block;
+  margin: 0 auto 2rem;
+  width: 150px;
+}
+
+@media (max-width: 500px) {
+  .loginInputWrapper input {
+    font-size: 0.875rem;
+  }
+
+  .adminLoginForm {
+    padding: 1.5rem;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .adminLoginForm {
+    background: rgba(255, 255, 255, 0.2); /* White background with transparency */
+    backdrop-filter: blur(10px); /* Apply blur */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: #fff;
+  }
+}

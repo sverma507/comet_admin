@@ -1,0 +1,78 @@
+.update-member-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 100px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+  }
+  
+  .update-member-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    /* text-align: left; */
+    margin-left: -80px;
+    font-size: 17px;
+    color: rgb(54, 53, 53);
+    font-weight: 600;
+    margin-top: -10px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #868686;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds gap between the form fields */
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    width: 30%; /* Controls the width of the label */
+    /* text-align: right;  */
+    margin-left: 10px;
+    padding-right: 10px; /* Adds some space between label and input */
+  }
+  
+  .form-group input {
+    padding: 10px 15px;
+    width: 70%; /* Controls the width of the input field */
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #e5e6f8;
+    border-radius: 4px;
+    background-color: white;
+  }
+
+  .required{
+    color: red;
+  }
+  
+  .form-group label.note {
+    font-size: 12px;
+    color: red;
+    margin-left: 30%; /* Aligns the note under the corresponding field */
+    text-align: left;
+  }
+  
+  .form-group-row {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    
+  }
+  
