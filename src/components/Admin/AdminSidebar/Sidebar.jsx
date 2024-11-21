@@ -57,7 +57,7 @@ const Sidebar = ({toggle}) => {
           <div className="mt-20">
             <ul>
             
-              <li className="group " onClick={()=>{navigate('/admin/dashbord')}}>
+              <li className="group " onClick={()=>{navigate('/')}}>
                 <div onClick={() => handleDropdownClick(0)} className="flex  items-center px-4 py-2 cursor-pointer hover:bg-gray-700">
                   <FaTachometerAlt className="mr-2 text-2xl" />
                   {isOpen && <span className="flex-grow">Dashboard</span>}
