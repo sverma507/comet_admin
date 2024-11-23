@@ -7,9 +7,11 @@ const AdminProtectedRoute = ({children}) => {
     const { admin } = useSelector((store) => store.adminAuth); // Access adminAuth state
     const navigate = useNavigate();
         useEffect(()=>{
+        console.log(admin);
         if(!admin){
             navigate("/admin/login");
         }
+        
     },[])
   return <>{children}</>
 }
