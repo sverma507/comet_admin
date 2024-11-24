@@ -72,10 +72,10 @@ const Sidebar = ({toggle}) => {
                 {openDropdown === 1 && isOpen && (
                   <ul className="pl-10">
                     <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-users')}}>All Users</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-paid-users')}}>Paid Users</li>
+                    {/* <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-paid-users')}}>Paid Users</li>
                     <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/all-unpaid-users')}}>Unpaid Users</li>
                     <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/blocked-users')}} >Blocked Users</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/user-team')}}>User Team</li>
+                    <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/user-team')}}>User Team</li> */}
                     {/* <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/activation-report')}}>Activation Report</li> */}
                     {/* <li className="py-1 cursor-pointer hover:bg-gray-700">Access Panel</li> */}
                   </ul>
@@ -96,11 +96,11 @@ const Sidebar = ({toggle}) => {
                 </div>
                 {openDropdown === 2 && isOpen && (
                   <ul className="pl-10">
-                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/activation-bonus')}} >Acivation Bonus</li>
+                    {/* <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/activation-bonus')}} >Acivation Bonus</li>
                     <li className="py-1 cursor-pointer hover:bg-gray-700">Revenue Bonus</li>
                     <li className="py-1 cursor-pointer hover:bg-gray-700">Team Growth Income</li>
                     <li className="py-1 cursor-pointer hover:bg-gray-700">Invitation Bonus</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700">Game Income</li>
+                    <li className="py-1 cursor-pointer hover:bg-gray-700">Game Income</li> */}
                   </ul>
                 )}
               </li>
@@ -113,40 +113,40 @@ const Sidebar = ({toggle}) => {
                 </div>
                 {openDropdown === 3 && isOpen && (
                   <ul className="pl-10">
-                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/all-qr-requests')}}>Qr Recharge Request</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/add-deduct')}}>Add/Deduct Wallet</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/all-requests')}}>Deposite History</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/all-withdrawl-requests')}}>Withdrawl Request</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/all-withdrawl-requests')}}>Crypto Transactions</li>
+                    {/* <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/all-qr-requests')}}>Qr Recharge Request</li>
+                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/add-deduct')}}>Add/Deduct Wallet</li> */}
+                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-recharge-requests')}}>Deposite History</li>
+                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-withdrawl-requests')}}>Withdrawl Request</li>
+                    {/* <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/all-withdrawl-requests')}}>Crypto Transactions</li> */}
                   </ul>
                 )}
               </li>
-              <li className="group">
+              {/* <li className="group">
                 <div onClick={() => handleDropdownClick(4)} className="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-700">
                   <GiAchievement  className="mr-2 text-2xl" />
                   {isOpen && <span className="flex-grow">Manage Achiever</span>}
                   {isOpen && <FaAngleDown className={`ml-2 transition-transform duration-300 ${openDropdown === 4 ? 'rotate-180' : ''}`} />}
                 </div>
-              </li>
-              <li className="group">
+              </li> */}
+              {/* <li className="group">
                 <div onClick={() => handleDropdownClick(5)} className="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-700">
                   <FaPhotoFilm className="mr-2 text-2xl" />
                   {isOpen && <span className="flex-grow">Banner</span>}
                   {isOpen && <FaAngleDown className={`ml-2 transition-transform duration-300 ${openDropdown === 5 ? 'rotate-180' : ''}`} />}
                 </div>
-              </li>
-              <li className="group " onClick={()=>{navigate('/dashboard/admin/all-products')}}>
+              </li> */}
+              {/* <li className="group " onClick={()=>{navigate('/dashboard/admin/all-products')}}>
                 <div onClick={() => handleDropdownClick(0)} className="flex  items-center px-4 py-2 cursor-pointer hover:bg-gray-700">
                   <MdOutlineSettingsInputSvideo   className="mr-2 text-2xl" />
                   {isOpen && <span className="flex-grow">Products</span>}
                 </div>
-              </li>
-              <li className="group " onClick={()=>{navigate('/dashboard/admin/change-upi-qr')}}>
+              </li> */}
+              {/* <li className="group " onClick={()=>{navigate('/dashboard/admin/change-upi-qr')}}>
                 <div onClick={() => handleDropdownClick(0)} className="flex  items-center px-4 py-2 cursor-pointer hover:bg-gray-700">
                   <MdOutlineSettingsInputSvideo   className="mr-2 text-2xl" />
                   {isOpen && <span className="flex-grow">Update UPI</span>}
                 </div>
-              </li>
+              </li> */}
               <li className="group " onClick={()=>{navigate('/dashboard/admin/change-password')}}>
                 <div className="flex  items-center px-4 py-2 cursor-pointer hover:bg-gray-700">
                   <MdOutlineSettingsInputSvideo   className="mr-2 text-2xl" />

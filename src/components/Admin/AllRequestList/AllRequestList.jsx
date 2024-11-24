@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useAdminAuth } from '../../../context/adminAuth';
 import axios from 'axios';
 import Sidebar from '../AdminSidebar/Sidebar';
+import moment from 'moment';
 
 const AllRequestList = () => {
-    const [adminAuth] = useAdminAuth();
     const [transactions, setTransactions] = useState([]);
     const [loading, setLoading] = useState(true);
-    const token = adminAuth.token;
 
     const getAllRequests = async () => {
         try {
-            const result = await axios.get(`${process.env.REACT_APP_API_URL}/upi-payment/all-transactions`);
+            const result = await axios.get(`${process.env.REACT_APP_API_URL}/admin/all-recharge-history`);
 
-            console.log("transactions=>", result.data);
-            setTransactions(result.data);
+            console.log("transactions=>", result);
+            setTransactions(result.data.data);
             setLoading(false);
         } catch (err) {
             console.log("Error while getting the transactions", err);
@@ -44,11 +42,10 @@ const AllRequestList = () => {
                     <thead>
                         <tr>
                             <th className="py-2">Sr#</th>
-                            <th className="py-2">Date</th>
                             <th className="py-2">User Id</th>
                             <th className="py-2">Amount</th>
-                            <th className="py-2">Mobile No</th>
-                            <th className="py-2">Status</th>
+                            <th className="py-2">ActivatedBy</th>
+                            <th className="py-2">Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,16 +53,15 @@ const AllRequestList = () => {
                             transactions.map((transaction, index) => (
                                 <tr key={transaction._id}>
                                     <td className="py-2 text-center text-white">{index + 1}</td>
-                                    <td className="py-2 text-center text-white">{new Date(transaction.createdAt).toLocaleDateString()}</td>
-                                    <td className="py-2 text-center text-white">{transaction.userCode}</td>
-                                    <td className="py-2 text-center text-white">Rs. {transaction.txnAmount}</td>
-                                    <td className="py-2 text-center text-white">{transaction.customerMobile}</td>
-                                    <td className="py-2 text-center text-white ">{transaction.status === 'created'? 'Processing':`${transaction.status}`}</td>
+                                    <td className="py-2 text-center text-white">{transaction.referralCode}</td>
+                                    <td className="py-2 text-center text-white">$ {transaction.amount}</td>
+                                    <td className="py-2 text-center text-white">{transaction.activatedBy}</td>
+                                    <td className="py-2 text-center text-white"> {moment(transaction.createdAt).format("YYYY-MM-DD")}</td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="6" className="text-center py-4">No transaction found</td>
+                                <td colSpan="6" className="text-center py-4">No Recharge found</td>
                             </tr>
                         )}
                     </tbody>

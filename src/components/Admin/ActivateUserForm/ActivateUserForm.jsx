@@ -21,7 +21,7 @@ function ActivateUserForm() {
         `${process.env.REACT_APP_API_URL}/admin/activate-user-history`
       );
       setActivationList(result.data.data);
-      console.log("result==>",result.data)
+      console.log("result==>",result.data);
     } catch (error) {
       console.log(error);
       toast.error("Error fetching activation list.");
@@ -135,6 +135,7 @@ function ActivateUserForm() {
                 <th className="py-2 px-4 border-b text-center">#</th>
                 <th className="py-2 px-4 border-b text-center">User Id</th>
                 <th className="py-2 px-4 border-b text-center">Package</th>
+                <th className="py-2 px-4 border-b text-center">Activated By</th>
                 <th className="py-2 px-4 border-b text-center">Date & Time</th>
               </tr>
             </thead>
@@ -146,6 +147,7 @@ function ActivateUserForm() {
                   {/* <td className="py-2 px-4 border-b text-center">{activation.mobileNumber}</td> */}
                   {/* <td className="py-2 px-4 border-b text-center">{activation.activateBy}</td> */}
                   <td className="py-2 px-4 border-b text-center">{activation.amount}</td>
+                  <td className="py-2 px-4 border-b text-center">{activation.activatedBy}</td>
                   {/* <td className="py-2 px-4 border-b text-center">Rs. {(activation.packagePrice || 0).toLocaleString("en-IN")}</td> */}
                   <td className="py-2 px-4 border-b text-center">{new Date(activation.createdAt).toLocaleString()}</td>
                 </tr>
