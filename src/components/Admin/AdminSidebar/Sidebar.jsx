@@ -72,10 +72,10 @@ const Sidebar = ({toggle}) => {
                 {openDropdown === 1 && isOpen && (
                   <ul className="pl-10">
                     <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-users')}}>All Users</li>
-                    {/* <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-paid-users')}}>Paid Users</li>
+                    <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/admin/all-paid-users')}}>Paid Users</li>
                     <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/all-unpaid-users')}}>Unpaid Users</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/blocked-users')}} >Blocked Users</li>
-                    <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/user-team')}}>User Team</li> */}
+                    {/* <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/blocked-users')}} >Blocked Users</li> */}
+                    <li className="py-1 cursor-pointer hover:bg-gray-700"  onClick={()=>{navigate('/admin/user-team')}}>User Team</li>
                     {/* <li className="py-1 cursor-pointer hover:bg-gray-700" onClick={()=>{navigate('/dashboard/admin/activation-report')}}>Activation Report</li> */}
                     {/* <li className="py-1 cursor-pointer hover:bg-gray-700">Access Panel</li> */}
                   </ul>

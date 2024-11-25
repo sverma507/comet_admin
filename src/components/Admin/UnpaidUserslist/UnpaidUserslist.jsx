@@ -7,12 +7,23 @@ const UnpaidUsersList = () => {
 
     const getUnpaidUsers = async () => {
         try {
-            const result = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/admin/all-unactive-users`);
-            setUnpaidUsers(result.data.users);
+          const result = await axios.get(
+            `${process.env.REACT_APP_API_URL}/admin/all-users`
+          );
+          let pd = [];
+          for (let i = 0; i < result.data.data.length; i++) {
+            console.log("resultt===>",result.data.data[i]);
+    
+            if (result.data.data[i].isActive == false) {
+              pd.push(result.data.data[i]);
+              console.log("resultt===>",result.data.data[i]);
+            }
+            }
+            setUnpaidUsers(pd);
         } catch (err) {
-            console.log("Error while getting unpaid users", err);
+          console.log("Error while getting paid users", err);
         }
-    };
+      };
 
     useEffect(() => {
         getUnpaidUsers();
@@ -32,20 +43,18 @@ const UnpaidUsersList = () => {
                             <th className="py-3 px-6 text-center">Sn No.</th>
                             <th className="py-3 px-6 text-center">User Id</th>
                             <th className="py-3 px-6 text-center">Sponser Id</th>
-                            <th className="py-3 px-6 text-center">Email</th>
-                            <th className="py-3 px-6 text-center">Mobile No.</th>
+                            <th className="py-3 px-6 text-center">Wallet Address</th>
                             <th className="py-3 px-6 text-center">Joining Date/Time</th>
                         </tr>
                     </thead>
                     <tbody className="text-gray-600 text-sm font-light">
-                        {unpaidUsers.length > 0 ? (
-                            unpaidUsers.map((user, index) => (
+                        {unpaidUsers?.length > 0 ? (
+                            unpaidUsers?.map((user, index) => (
                                 <tr key={user._id} className={`border-b border-gray-200 hover:bg-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                                     <td className="py-3 px-6 text-center">{index + 1}</td>
                                     <td className="py-3 px-6 text-center">{user.referralCode}</td>
                                     <td className="py-3 px-6 text-center">{user.referredBy}</td>
-                                    <td className="py-3 px-6 text-center">{user.email}</td>
-                                    <td className="py-3 px-6 text-center">{user.phone}</td>
+                                    <td className="py-3 px-6 text-center">{user.walletAddress}</td>
                                     <td className="py-3 px-6 text-center">{new Date(user.createdAt).toLocaleDateString()} - {new Date(user.createdAt).toLocaleTimeString()}</td>
                                 </tr>
                             ))

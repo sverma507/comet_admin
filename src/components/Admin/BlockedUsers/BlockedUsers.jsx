@@ -45,8 +45,8 @@ const BlockedUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {blockedUsers.length > 0 ? (
-                            blockedUsers.map((user, index) => (
+                        {blockedUse$length > 0 ? (
+                            blockedUse$map((user, index) => (
                                 <tr key={user._id} className={`text-center ${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}>
                                     <td className="py-2 px-4 border-b">{index + 1}</td>
                                     <td className="py-2 px-4 border-b">{user.referralCode}</td>

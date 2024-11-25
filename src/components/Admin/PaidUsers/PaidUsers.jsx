@@ -9,10 +9,18 @@ const PaidUsers = () => {
   const getPaidUsers = async () => {
     try {
       const result = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/v1/admin/all-active-users`
+        `${process.env.REACT_APP_API_URL}/admin/all-users`
       );
-      // console.log("resultt===>",result);
-      setPaidUsers(result.data.users);
+      let pd = [];
+      for (let i = 0; i < result.data.data.length; i++) {
+        console.log("resultt===>",result.data.data[i]);
+
+        if (result.data.data[i].isActive == true) {
+          pd.push(result.data.data[i]);
+          console.log("resultt===>",result.data.data[i]);
+        }
+        }
+      setPaidUsers(pd);
     } catch (err) {
       console.log("Error while getting paid users", err);
     }
@@ -22,7 +30,6 @@ const PaidUsers = () => {
     getPaidUsers();
   }, []);
 
-  console.log(paidUsers)
   return (
     <div className="flex min-h-screen gap-4">
       <Sidebar className="fixed w-60 h-full"  />
@@ -35,7 +42,8 @@ const PaidUsers = () => {
             <tr className="bg-orange-500 text-white">
               <th className="py-2 px-4 border-b">S.No</th>
               <th className="py-2 px-4 border-b">Referral Code</th>
-              <th className="py-2 px-4 border-b">Mobile Number</th>
+              <th className="py-2 px-4 border-b">Sponser Id</th>
+              <th className="py-2 px-4 border-b">Wallet Address</th>
               {/* <th className="py-2 px-4 border-b">Packages</th> */}
               <th className="py-2 px-4 border-b">Wallet</th>
               {/* <th className="py-2 px-4 border-b">Prices</th> */}
@@ -43,7 +51,7 @@ const PaidUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {paidUsers.length > 0 ? (
+            {paidUsers?.length > 0 ? (
               paidUsers?.map((user, index) => (
                 <tr
                   key={user._id}
@@ -53,7 +61,8 @@ const PaidUsers = () => {
                 >
                   <td className="py-2 px-4 border-b">{index + 1}</td>
                   <td className="py-2 px-4 border-b">{user.referralCode}</td>
-                  <td className="py-2 px-4 border-b">{user.phone}</td>
+                  <td className="py-2 px-4 border-b">{user?.referredBy ? `${user?.referredBy}` : "First User"}</td>
+                  <td className="py-2 px-4 border-b">{user.walletAddress}</td>
                   {/* <td className="py-2 px-4 border-b">
                     {user.packages.map((pkg, index) => (
                       <div key={index}>
@@ -64,12 +73,12 @@ const PaidUsers = () => {
                   {/* <td className="py-2 px-4 border-b">
                     {user.packages.map((pkg, index) => (
                       <div key={index}>
-                        {pkg ? `Rs. ${pkg.price.toFixed(2)}` : "0.00"}
+                        {pkg ? `$ ${pkg.price.toFixed(2)}` : "0.00"}
                       </div>
                     ))}
                   </td> */}
                   <td className="py-2 px-4 border-b">
-                    Rs. {user.earningWallet.toFixed(2)}
+                    $ {user.earningWallet.toFixed(2)}
                   </td>
                   {/* <td className="py-2 px-4 border-b">
                     {user.purchaseDate.length > 0

@@ -148,7 +148,7 @@ function ActivateUserForm() {
                   {/* <td className="py-2 px-4 border-b text-center">{activation.activateBy}</td> */}
                   <td className="py-2 px-4 border-b text-center">{activation.amount}</td>
                   <td className="py-2 px-4 border-b text-center">{activation.activatedBy}</td>
-                  {/* <td className="py-2 px-4 border-b text-center">Rs. {(activation.packagePrice || 0).toLocaleString("en-IN")}</td> */}
+                  {/* <td className="py-2 px-4 border-b text-center">$ {(activation.packagePrice || 0).toLocaleString("en-IN")}</td> */}
                   <td className="py-2 px-4 border-b text-center">{new Date(activation.createdAt).toLocaleString()}</td>
                 </tr>
               ))}

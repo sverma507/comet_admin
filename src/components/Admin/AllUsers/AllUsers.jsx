@@ -46,7 +46,7 @@ const AllUsers = () => {
   const toggleBlockedStatus = async (id, currentStatus) => {
     try {
       const updatedStatus = !currentStatus;
-      await axios.put(`${process.env.REACT_APP_API_URLL}/admin/user-block-status/${id}`, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/admin/user-block-status/${id}`, {
         isBlocked: updatedStatus,
       });
       // Show success message with toast
@@ -104,7 +104,7 @@ const AllUsers = () => {
               </tr>
             </thead>
             <tbody>
-              {users.map((user, index) => (
+              {users?.map((user, index) => (
                 <tr key={user._id} className="text-gray-700 hover:bg-gray-50">
                   <td className="py-2 px-4 border-b">{index + 1}</td>
 
@@ -147,14 +147,14 @@ const AllUsers = () => {
                               Edit User
                             </button>
                           </MenuItem>
-                          <MenuItem>
+                          {/* <MenuItem>
                             <button
                               className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                               onClick={() => toggleBlockedStatus(user._id, user.isActive)}
                             >
                               {user.isActive ? 'Block User' : 'Unblock User'}
                             </button>
-                          </MenuItem>
+                          </MenuItem> */}
                         </div>
                       </MenuItems>
                     </Menu>

@@ -24,7 +24,7 @@ const DownlineUsers = () => {
       setError('');
     } catch (err) {
       console.error('Error fetching downline users', err);
-      setError('Failed to fetch downline users.');
+      setError('Failed to fetch downline use$');
     } finally {
       setLoading(false);
     }
@@ -47,7 +47,7 @@ const DownlineUsers = () => {
   }
 
   const renderDownlineUsers = (users, parentLevel) => {
-    return users.map((user, index) => (
+    return use$map((user, index) => (
       <React.Fragment key={user._id}>
         <tr className={`border-b text-center border-gray-200 hover:bg-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
           <td className="px-5 py-3">{index + 1}</td>
@@ -59,7 +59,7 @@ const DownlineUsers = () => {
           <td className="px-5 py-3">{user.purchaseDate.length>0 ? new Date(user.purchaseDate[user.purchaseDate.length-1]).toLocaleDateString() : 'Unrecharged'}</td>
           <td className="px-5 py-3">{user.wallet ? `₹ ${user.wallet.toFixed(2)}` : '₹ 0.00'}</td>
         </tr>
-        {user.downlineUsers.length > 0 && renderDownlineUsers(user.downlineUsers, user.level)}
+        {user.downlineUse$length > 0 && renderDownlineUsers(user.downlineUsers, user.level)}
       </React.Fragment>
     ));
   };
@@ -114,7 +114,7 @@ const DownlineUsers = () => {
             </thead>
             <tbody className="text-gray-600 text-sm font-light">
 
-              {downlineUsers.length > 0 ? (
+              {downlineUse$length > 0 ? (
                 renderDownlineUsers(downlineUsers, 1)
               ) : !loading ? (
                 <tr>

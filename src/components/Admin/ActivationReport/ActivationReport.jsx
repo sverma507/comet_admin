@@ -39,7 +39,7 @@ const ActivationReport = () => {
                     </tr>
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
-                    {users.map((user, index) => (
+                    {use$map((user, index) => (
                         <tr key={user.userDetail} className={`border-b border-gray-200 hover:bg-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                             <td className="px-5 py-3">{user.sn}</td>
                             <td className="px-5 py-3">{user.userDetail}</td>
